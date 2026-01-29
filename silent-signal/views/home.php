@@ -121,34 +121,16 @@
         <h2 class="section-title">How It Works</h2>
         
         <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3 class="step-title">Sign Up &<br>Set Up Profile</h3>
-                <p class="step-description">
-                    Users (or their<br>
-                    parents/guardians) can add<br>
-                    emergency contacts.
-                </p>
-            </div>
-            
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3 class="step-title">Activate &<br>Stay Alert</h3>
-                <p class="step-description">
-                    Receive disaster alerts, check<br>
-                    and receive updates.
-                </p>
-            </div>
-            
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h3 class="step-title">Get Help<br>Instantly</h3>
-                <p class="step-description">
-                    In an emergency, tap buttons to<br>
-                    send pre-configured messages<br>
-                    (with/without location).
-                </p>
-            </div>
+            <?php
+
+            foreach($data as $row) {
+                echo '<div class="step-card">';
+                echo '<div class="step-number">' . $row[0] . '</div>';
+                echo '<div class="step-title">' . $row[1] . '</div>';
+                echo '<div class="step-description">' . $row[2] . '</div>';
+                echo '</div>';
+            }
+            ?>
         </div>
     </div>
 </section>
