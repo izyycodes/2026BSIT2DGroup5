@@ -123,7 +123,7 @@
         <div class="steps-grid">
             <?php
 
-            foreach($data as $row) {
+            foreach($howitworks as $row) {
                 echo '<div class="step-card">';
                 echo '<div class="step-number">' . $row[0] . '</div>';
                 echo '<div class="step-title">' . $row[1] . '</div>';
