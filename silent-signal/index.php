@@ -1,22 +1,40 @@
 <?php
 // index.php - Main entry point
+
+session_start();
 require_once 'config/config.php';
-require_once CONTROLLER_PATH . 'HomeController.php';
 
-$controller = new HomeController();
+$action = $_GET['action'] ?? 'home';
 
-$page = $_GET['page'] ?? 'home';
+switch ($action) {	
+    case 'home':
+        require_once CONTROLLER_PATH . 'HomeController.php';
+        $controller = new HomeController();
+        $controller->index();
+        break;
 
-switch ($page) {	
+    // Auth routes - redirect to AuthController
     case 'login':
-        require VIEW_PATH . 'login.php';
+        require_once CONTROLLER_PATH . 'AuthController.php';
+        $controller = new AuthController();
+        $controller->login();
         break;
 		
 	case 'signup':
-		require VIEW_PATH . 'signup.php';
-		break;
+		require_once CONTROLLER_PATH . 'AuthController.php';
+        $controller = new AuthController();
+        $controller->signup();
+        break;
+
+    case 'logout':
+        // These are handled by AuthController
+        header("Location: controllers/AuthController.php?action=" . $action);
+        exit();
+        break;
 
     default:
+        require_once CONTROLLER_PATH . 'HomeController.php';
+        $controller = new HomeController();
         $controller->index();
         break;
 }

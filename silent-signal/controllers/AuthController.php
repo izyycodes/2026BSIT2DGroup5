@@ -1,20 +1,20 @@
 <?php
-session_start();
-
-require_once __DIR__ . '/../config/database.php';
+// require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/User.php';
 
 class AuthController {
     private $db;
     private $user;
 
-    public function __construct() {
-        $database = new Database();
-        $this->db = $database->getConnection();
-        $this->user = new User($this->db);
-    }
+    // // public function __construct() {
+    // //     $database = new Database();
+    // //     $this->db = $database->getConnection();
+    // //     $this->user = new User($this->db);
+    // // }
 
     public function signup() {
+        $pageTitle = "Signup - Silent Signal";
+
         if($_SERVER["REQUEST_METHOD"] == "POST") {
             // Get posted data
             $this->user->name = $_POST['name'];
@@ -58,9 +58,13 @@ class AuthController {
                 exit();
             }
         }
+
+        require_once VIEW_PATH . 'signup.php';  
     }
 
     public function login() {
+        $pageTitle = "Login - Silent Signal";
+
         if($_SERVER["REQUEST_METHOD"] == "POST") {
             $email_or_phone = $_POST['email_phone'];
             $password = $_POST['password'];
@@ -89,6 +93,8 @@ class AuthController {
                 exit();
             }
         }
+
+        require_once VIEW_PATH . 'login.php';  
     }
 
     public function logout() {

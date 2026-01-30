@@ -7,7 +7,7 @@ class HomeController {
         // Load any data needed for the home page
         $pageTitle = "Home - Silent Signal";
         $pageDescription = "Emergency Communication Made Accessible for the Deaf and Mute";
-        $howitworks = [
+        $howItWorks = [
             ['1', 'Sign Up & Set Up Profile', 'Users (or their parents/guardians) can add emergency contacts '],
             ['2', 'Activate & Stay Alert', 'Receive disaster alerts, check
             and receive updates.'],

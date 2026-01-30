@@ -1,17 +1,22 @@
 <?php
-session_start();
-require_once VIEW_PATH . 'includes/header.php';
+require_once __DIR__ . '/../config/config.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Silent Signal</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title><?php echo $pageTitle ?? 'Silent Signal'; ?></title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <?php require_once VIEW_PATH . 'includes/header.php'; ?>
+
     <!-- Main Container -->
     <div class="main-container login-container">
         <!-- Login Form Section -->
@@ -65,11 +70,12 @@ require_once VIEW_PATH . 'includes/header.php';
         <div class="welcome-section">
             <h1>Hello, Friend!</h1>
             <p>Enter your details and start your journey with accessible and reliable emergency support.</p>
-            <a href="index.php?page=signup" class="welcome-btn">SIGN UP</a>
+            <a href="index.php?action=signup" class="welcome-btn">SIGN UP</a>
         </div>
     </div>
 
 	 <?php require_once VIEW_PATH . '/includes/footer.php'; ?>
+
 </body>
 </html>
 

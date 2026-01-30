@@ -1,24 +1,28 @@
 <?php
-session_start();
-require_once VIEW_PATH . 'includes/header.php';
+require_once __DIR__ . '/../config/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Silent Signal</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title><?php echo $pageTitle ?? 'Silent Signal'; ?></title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <?php require_once VIEW_PATH . 'includes/header.php'; ?>
+
     <!-- Main Container -->
     <div class="main-container">
         <!-- Welcome Section -->
         <div class="welcome-section">
             <h1>Welcome Back!</h1>
             <p>To stay connected and access accessible emergency support, please log in using your details.</p>
-            <a href="index.php?page=login" class="welcome-btn">LOGIN</a>
+            <a href="index.php?action=login" class="welcome-btn">LOGIN</a>
         </div>
 
         <!-- Signup Form Section -->
@@ -90,5 +94,6 @@ require_once VIEW_PATH . 'includes/header.php';
     </div>
 
     <?php require_once VIEW_PATH . 'includes/footer.php'; ?>
+
 </body>
 </html>
