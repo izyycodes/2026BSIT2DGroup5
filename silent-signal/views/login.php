@@ -7,12 +7,13 @@ require_once VIEW_PATH . 'includes/home-header.php';
 
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/login.css">
 
+<a href="<?php echo BASE_URL; ?>index.php?action=home" class="back-to-home">
+    <i class="ri-arrow-left-line"></i> Back to Home
+</a>
+
 <!-- Main Container -->
 <div class="main-container login-container">
     <!-- Back to Home Link -->
-    <a href="<?php echo BASE_URL; ?>index.php?action=home" class="back-to-home">
-        <i class="ri-arrow-left-line"></i> Back to Home
-    </a>
     
     <!-- Login Form Section -->
     <div class="form-section">
